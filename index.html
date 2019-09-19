@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Rahul Bhosale</title>
-  <meta name="description" content="Rahul Bhosale, rtbhosale17@gmail.com
-">
-
+  <meta name="description" content="Rahul Bhosale, rtbhosale17@gmail.com">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://rahul.bhosale.info/">
   <link rel="alternate" type="application/rss+xml" title="Rahul Bhosale" href="http://rahul.bhosale.info/feed.xml">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137843780-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-137843780-1');
-</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137843780-1"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+	<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-137843780-1');
+	</script>
+
+	<script>
+
+	</script>
 </head>
 
 
@@ -77,7 +79,7 @@
         <div class="block glass">
             <div class="block-body">
                 <h2>Yo, I'm Rahul Bhosale</h2>
-                <p class="grey-text"> I am a Software Engineer with 3 year of exprience in designing, developing web application. I live in Bangalore, India and currently working for Medtronic India Pvt Ltd.</p>
+                <p class="grey-text"> I am a Software Engineer with <span id="totalExp"></span> year of exprience in designing, developing web application. I live in Bangalore, India and currently working for Medtronic India Pvt Ltd.</p>
                 <p class="grey-text"> I am also a Penetration tester, Hacker and Machine learning enthusiast.</p>
                 <p class="grey-text"> I belive in karma. I listen to instrumental and bass boosted music.</p>
             </div>
@@ -237,7 +239,12 @@
 
 </footer>
 
-
+	<script>
+		var startDate = new moment('2016-02-01');
+		var currentDate = new moment();
+		var totalExp = moment.duration(currentDate.diff(startDate));
+		document.getElementById("totalExp").innerText = totalExp.asYears().toFixed(1);
+	</script>
   </body>
 
 </html>
